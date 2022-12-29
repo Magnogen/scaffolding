@@ -1,2 +1,2 @@
 # scaffolding
-the basic structure for a my website pages
+The basic structure for my website pages

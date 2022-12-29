@@ -1,0 +1,118 @@
+html {
+    margin: 0;
+    padding: 0;
+    background: #08080c;
+}
+
+body {
+    width: calc(100vw - max(20vw, 4em));
+    min-height: 100vh;
+    max-width: 64em;
+    margin: 0 auto;
+    padding: 1em 2em 4em 2em;
+    box-sizing: border-box;
+    background: #202027;
+    font-family: "Poppins", sans-serif;
+    color: #ffffff;
+    overflow: hidden auto;
+}
+
+body>canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+div.code {
+    position: relative;
+}
+
+code {
+    display: block;
+    white-space: pre;
+    tab-size: 2;
+    overflow: auto;
+    background: #08080c;
+    padding: 0.5em 3em 0.5em 1em;
+    margin: 0.5em 0;
+    border-radius: 0.333em;
+    font-family: "Fira Code", monospace;
+    font-size: 0.8em;
+}
+
+code::-webkit-scrollbar {
+    height: 0.5em;
+}
+
+code::-webkit-scrollbar-track {}
+
+code::-webkit-scrollbar-thumb {
+    background: #40404e;
+    border-radius: 0.5em;
+}
+
+span.copy {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.25em 0.5em;
+    border-left: 2px solid #202027;
+    border-bottom: 2px solid #202027;
+    border-radius: 0 0 0 0.333em;
+    background: #202027;
+    cursor: pointer;
+}
+
+code.js .code {
+    color: #ffffff
+}
+
+code.js .comment {
+    color: #c4c4e4;
+    font-style: italic;
+}
+
+code.js .keyword {
+    color: #66c4ff
+}
+
+code.js .boolean {
+    color: #c444ff
+}
+
+code.js .number {
+    color: #c444ff
+}
+
+code.js .string {
+    color: #44ffc4
+}
+
+S h1 {
+    font-weight: 100;
+}
+
+a {
+    text-decoration: none;
+    background: linear-gradient(to right, #80a6ff, #80a6ff);
+    background-size: 0% 1px;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    transition: background 0.2s, color 0.2s;
+    color: #80a6ff;
+}
+
+a:hover {
+    background: linear-gradient(to right, #ccdbff, #ccdbff);
+    background-size: 100% 1px;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    color: #ccdbff;
+}
+
+a:active {
+    color: #004cff;
+}

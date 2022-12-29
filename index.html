@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Scaffolding | Magnogen</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="The basic structure for my website pages. Lorem ipsum dolor sit amet..." />
+    <link rel="shortcut icon" href="https://magnogen.net/src/favicon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://src.magnogen.net/dom.js"></script>
+    <script src="https://src.magnogen.net/meal.js"></script>
+    <script src="https://src.magnogen.net/random.js"></script>
+    <script src="sketch.js" defer></script>
+</head>
+
+<body>
+    <canvas id="bubbles"></canvas>
+    <h1>
+        Testing
+    </h1>
+    <p>
+        These are some sample paragraphs.
+        They were generated with <a href="https://lipsum.com">Lipsum.com</a>.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Etiam sagittis, tellus eget finibus viverra, dui urna mollis nibh, eu tincidunt quam mi rhoncus lacus.
+        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+        <a href="#">This is a sample link.</a>
+        Nam nibh nibh, consectetur ac sem euismod, suscipit aliquet tortor.
+        Pellentesque eleifend quis quam vel feugiat.
+        Vivamus varius nisl non nisi molestie, in luctus dui tempus.
+        Quisque eget gravida felis.
+        Suspendisse vitae tincidunt nibh.
+        Integer convallis consectetur velit vel finibus.
+        <a href="#">Curabitur non gravida purus.</a>
+    </p>
+    <p>
+        Hmm yes codey codey code.
+        JavaScript yes.
+        Generated with <a href="https://chat.openai.com">ChatGPT</a>.
+    </p>
+    <code class="js">
+      // Print first 5 elements of array
+      function output_5(arr) {
+      \t  for (let i = 0; i &lt; arr.length; i++) {
+      \t  \t  if (i &lt; 5) {
+      \t  \t  \t  console.log(arr[i]);
+      \t  \t  }
+      \t  }
+      }
+
+      // Detect if number is odd or even
+      function is_even(num) {
+      \t  return num % 2 == 0 ? `${num} is even` : `${num} is odd`;
+      }
+
+      // Output the age of a person
+      function person({ name, age = 0 }) {
+      \t  console.log(`${name} is ${age} years old.`);
+      \t  return { name, age };
+      }
+
+      // Sort arguments
+      const sort = (...args) =&gt; args.sort((a, b) =&gt; a - b);
+    </code>
+    <p>
+        Aliquam purus justo, pharetra at magna lobortis, venenatis mollis augue.
+        Nulla id viverra tortor.
+        Phasellus posuere dignissim nibh a tempor.
+        Aenean cursus tellus at elit iaculis dapibus.
+        Curabitur vel semper nisi.
+        Aenean dignissim erat nibh, suscipit laoreet mi laoreet vitae.
+        Ut ipsum ex, tempus vel dui quis, tristique maximus nisl.
+        Proin gravida elit eu est malesuada, nec rhoncus nisl eleifend.
+        In mauris leo, viverra at viverra accumsan, faucibus et metus.
+        Aenean molestie mi vel lacus vulputate, vitae fermentum mauris vulputate.
+        Nam fermentum, turpis eu ullamcorper pellentesque, enim ipsum posuere erat, ac accumsan mi felis eu sem.
+        Fusce aliquet ornare nisi nec blandit.
+        Etiam at tortor pretium, sodales neque ac, sodales ex.
+        Maecenas nec <a href="#">condimentum dolor</a>.
+        Pellentesque facilisis, urna vitae egestas laoreet, elit nisl interdum massa, et pellentesque quam nisi vitae
+        nisl.
+    </p>
+    <p>
+        In eros ex, pellentesque non varius eu, semper a nisl.
+        In gravida nulla in luctus tincidunt.
+        Etiam elementum imperdiet ligula, at efficitur tellus blandit a.
+        Sed at turpis in ex luctus maximus in sit amet quam.
+        Vivamus sit amet placerat lacus, quis maximus nisl.
+        Quisque leo metus, sagittis id justo nec, semper bibendum metus.
+        Praesent interdum venenatis nisl.
+    </p>
+    <p>
+        Nulla sit amet nisi tellus.
+        Praesent at est egestas, sollicitudin arcu in, commodo velit.
+        Duis congue lacus est, eu pulvinar leo viverra at.
+        Pellentesque pellentesque feugiat dui pretium tristique.
+        Nunc congue ligula et nisl auctor, sit amet cursus quam tempor.
+        Integer commodo, nunc non ullamcorper efficitur, lacus tortor fringilla sapien, id pellentesque urna dui ut
+        eros.
+        Donec hendrerit erat non ipsum vestibulum, vitae feugiat metus dapibus.
+        Vivamus non efficitur orci.
+        Praesent porta, urna eu ullamcorper tempus, quam augue aliquet nisl, eget placerat odio lorem a enim.
+        Vivamus dapibus ut lorem vel eleifend.
+        Nullam sit amet mauris ac neque pretium consectetur.
+        Phasellus eget ex tincidunt mauris ultrices convallis id nec orci.
+        Aenean maximus quam in quam suscipit, at gravida <a href="#">libero tincidunt</a>.
+        Morbi interdum mattis nisl, eleifend ultrices metus suscipit tincidunt.
+        Ut non odio sit amet lacus dictum ornare.
+    </p>
+    <p>
+        Aliquam at mi urna.
+        Mauris vel eros gravida, faucibus enim in, dapibus dolor.
+        Donec quis posuere velit.
+        Praesent sed risus sodales, malesuada sem sit amet, sodales elit.
+        Integer ornare felis quis porta rutrum.
+        Mauris vestibulum tellus sit amet arcu tempus, sit amet lacinia orci varius.
+        Cras molestie ipsum in mattis ornare.
+        Sed eget dapibus ipsum.
+        Sed quis magna nec nunc maximus malesuada eu eget lacus.
+        Quisque sed mauris suscipit, elementum felis quis, accumsan magna.
+        Mauris consectetur nunc non elit ornare, eget laoreet sapien auctor.
+        Cras congue varius posuere.
+        Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        In ac fringilla ex, non eleifend ante.
+        Nulla luctus euismod risus.
+    </p>
+    <p>
+        Aenean eleifend, justo nec faucibus viverra, sem magna rhoncus ligula, consequat tristique tellus dolor eget
+        erat.
+        Mauris in sapien nibh.
+        Sed tincidunt tellus non ex vulputate placerat non non arcu.
+        In risus magna, vestibulum at tellus eget, luctus malesuada libero.
+        Cras tempor sed erat vitae ornare.
+        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        Quisque volutpat vestibulum risus sit amet laoreet.
+        Aliquam in nibh id elit aliquam finibus.
+        Etiam vel malesuada dolor.
+        Donec porttitor dui neque, et egestas mauris tristique non.
+        Suspendisse in erat eu tellus placerat pulvinar.
+        Pellentesque tincidunt sapien et felis molestie, sed consequat sapien congue.
+        Vestibulum a volutpat tellus.
+    </p>
+    <ul>
+        <li>
+            <a href="#">
+                Curabitur ut porta dolor
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                Ut faucibus dolor
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                Praesent malesuada eros (dignissim magna laoreet pulvinar)
+            </a>
+        </li>
+    </ul>
+</body>
+
+</html>
