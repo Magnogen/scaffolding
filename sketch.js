@@ -100,12 +100,14 @@ $$('code').forEach(el => {
 });
 
 (async () => {
-    const c = $('canvas#bubbles');
+    const c = document.createElement('canvas');
+    const ctx = c.getContext('2d');
+    c.id = 'bubbles';
+    document.body.prepend(c);
     const seed = 0 | rand(0xffffffff);
     let y = 0;
     on('resize', () => {
         const [width, height] = [c.width, c.height] = [innerWidth, innerHeight];
-        const ctx = c.getContext('2d');
         const { rand } = Mulberry(seed);
         ctx.fillStyle = '#141419';
         for (let i = 0; i < 8; i++) {
@@ -119,6 +121,96 @@ $$('code').forEach(el => {
         y = -scrollY * 0.75;
         trigger('resize');
     });
+})();
+
+(async () => {
+    const c = document.createElement('canvas');
+    const ctx = c.getContext('2d');
+    c.id = 'particles';
+    document.body.prepend(c);
+    let {width, height} = c.getBoundingClientRect();
+    
+    const { hash } = Mulberry();
+    // todo: make this multidimensional and add it to random library
+    const noise = (x, y, z) => {
+      const lerp = (a, b, t) => a*(1-t) + b*t;
+      const x0 = 0|x;
+      const x1 = 0|x + 1;
+      const y0 = 0|y;
+      const y1 = 0|y + 1;
+      const z0 = 0|z;
+      const z1 = 0|z + 1;
+      return lerp(
+        lerp(
+          lerp(
+            hash(x0, y0, z0),
+            hash(x1, y0, z0),
+            x-x0
+          ),
+          lerp(
+            hash(x0, y1, z0),
+            hash(x1, y1, z0),
+            x-x0
+          ),
+          y-y0
+        ),
+        lerp(
+          lerp(
+            hash(x0, y0, z1),
+            hash(x1, y0, z1),
+            x-x0
+          ),
+          lerp(
+            hash(x0, y1, z1),
+            hash(x1, y1, z1),
+            x-x0
+          ),
+          y-y0
+        ),
+        z-z0
+      );
+    };
+    Ps = [...Array(8)].map((e, i) => {
+      let x = width*0.9, px = x;
+      let y = innerHeight/2+scrollY, py = y;
+      const inertia = 0.02 + randpom(0.005);
+      return {
+        render() {
+          ctx.strokeStyle = '#6d6d86';
+          ctx.lineWidth = 4;
+          ctx.lineCap = 'round';
+          ctx.beginPath();
+          ctx.moveTo(px, py)
+          ctx.lineTo(x, y);
+          ctx.stroke();
+        },
+        update() {
+          let X = width/10      * noise(performance.now()/2000, i, 1);
+          let Y = innerHeight/2 * noise(performance.now()/2000, i, 2);
+          X += width - width*0.15;
+          Y += innerHeight/4;
+          Y += scrollY;
+          [px, py] = [x, y];
+          x -= (x-X)*inertia;
+          y -= (y-Y)*inertia;
+        },
+      }
+    });
+  
+    on('resize', () => {
+        ({ width, height } = c.getBoundingClientRect());
+        [c.width, c.height] = [width, height];
+    }); trigger('resize');
+  
+    while (true) {
+      ctx.clearRect(0, 0, width, height);
+      for (let p of Ps) {
+        p.render();
+        p.update();
+      }
+      await new Promise(requestAnimationFrame);
+    }
+    
 })();
 
 

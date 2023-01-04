@@ -5,31 +5,36 @@ html {
 }
 
 body {
+    position: relative;
     width: calc(100vw - max(10vw, 2em));
     min-height: 100vh;
     max-width: 64em;
-    margin: 0 auto;
-    padding: 1em 2em 4em 2em;
+    margin: 0em auto;
+    padding: 2em 1em 4em 1em;
     box-sizing: border-box;
-    background: #202027;
+    background: #202024;
     font-family: "Poppins", sans-serif;
-    color: #ffffff;
+    color: #bbbbc8;
     overflow: hidden auto;
 }
 
-body>canvas {
+body > canvas#bubbles {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
     width: 100vw;
     height: 100vh;
     z-index: -1;
 }
-
-div.code {
-    position: relative;
+body > canvas#particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
 }
 
+div.code { position: relative }
 code {
     display: block;
     white-space: pre;
@@ -38,20 +43,14 @@ code {
     background: #08080c;
     padding: 0.5em 3em 0.5em 1em;
     margin: 0.5em 0;
-    border-radius: 0.333em;
     font-family: "Fira Code", monospace;
     font-size: 0.8em;
 }
 
-code::-webkit-scrollbar {
-    height: 0.5em;
-}
-
+code::-webkit-scrollbar { height: 0.5em }
 code::-webkit-scrollbar-track {}
-
 code::-webkit-scrollbar-thumb {
     background: #40404e;
-    border-radius: 0.5em;
 }
 
 span.copy {
@@ -61,7 +60,6 @@ span.copy {
     padding: 0.25em 0.5em;
     border-left: 2px solid #202027;
     border-bottom: 2px solid #202027;
-    border-radius: 0 0 0 0.333em;
     background: #202027;
     cursor: pointer;
 }
@@ -91,8 +89,18 @@ code.js .string {
     color: #44ffc4
 }
 
-S h1 {
-    font-weight: 100;
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    position: relative;
+    font-weight: 400;
+    width: 80%;
+    max-width: 40em;
+    z-index: 1;
 }
 
 a {
@@ -102,7 +110,7 @@ a {
     background-position: 50% 100%;
     background-repeat: no-repeat;
     transition: background 0.2s, color 0.2s;
-    color: #80a6ff;
+    color: #0086ff;
 }
 
 a:hover {
@@ -116,3 +124,16 @@ a:hover {
 a:active {
     color: #004cff;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
